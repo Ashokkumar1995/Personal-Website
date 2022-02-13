@@ -1,0 +1,78 @@
+:host {
+  display: flex;
+}
+.imageContainer {
+  display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: calc(100vh - 200px);
+  z-index: 11;
+  border-radius: 30px;
+  left: 40px;
+  top: 40px;
+  box-shadow: 0 0 7px rgb(0 0 0 / 90%);
+  margin: 10% 0 0 10%;
+
+  .profilePicture {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 30px;
+    animation: slideIn 1s ease-in-out forwards;
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100px) scale(0.2);
+    }
+    100% {
+      transform: translateX(0px) scale(1);
+    }
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0px;
+  // align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+  animation: slideIn 1.5s ease-in-out forwards;
+  h1 {
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: 700;
+    margin: 18px 0 10px;
+    position: relative;
+    padding-left: 0;
+    color: #ffb400;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+    // transform: translateY(300px);
+    // animation: slideUp 1.9s ease-in-out forwards 0.8s;
+    span {
+      color: #fff;
+      display: block;
+    }
+  }
+  p {
+    margin: 15px 0 28px;
+    font-size: 16px;
+    line-height: 35px;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    // transform: translateY(300px);
+    // animation: slideUp 1.8s ease-in-out forwards 0.8s;
+  }
+
+  // @keyframes slideUp {
+  //   0% {
+  //     transform: translateY(300px);
+  //   }
+  //   100% {
+  //     transform: translateY(0px);
+  //   }
+  // }
+}
