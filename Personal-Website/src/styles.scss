@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  animation: expand 0.8s ease forwards;
+  // animation: expand 0.8s ease forwards;
   background: linear-gradient(to right, #ffb400 0%, #ffb400 20%, #111 20%, #111 100%);
 }
 html,
@@ -12,11 +12,11 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-@keyframes expand {
-  // 0% {
-  //  transform: translateX(50px);
-  // }
-  100% {
-    transform: translateX(0px);
-  }
-}
+// @keyframes expand {
+//   // 0% {
+//   //  transform: translateX(50px);
+//   // }
+//   100% {
+//     transform: translateX(0px);
+//   }
+// }

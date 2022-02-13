@@ -1,6 +1,7 @@
 .homeLayout {
   display: flex;
-
+  flex: 1 1 0px;
+  height: 100%;
   .leftContainer {
     display: flex;
     flex: 3 2 0px;
@@ -22,12 +23,12 @@
         max-width: 100%;
         max-height: 100%;
         border-radius: 30px;
-        animation: slideIn 1.5s ease-in-out forwards;
+        animation: slideIn 1s ease-in-out forwards;
       }
 
       @keyframes slideIn {
         0% {
-          transform: translateX(20px) scale(0.2);
+          transform: translateX(100px) scale(0.2);
         }
         100% {
           transform: translateX(0px) scale(1);
@@ -42,7 +43,7 @@
       // align-items: center;
       justify-content: center;
       margin-left: 50px;
-
+      animation: slideIn 1.5s ease-in-out forwards;
       h1 {
         font-size: 42px;
         line-height: 52px;
@@ -53,8 +54,9 @@
         color: #ffb400;
         text-transform: uppercase;
         font-family: 'Poppins', sans-serif;
-        transform: translateY(300px);
-        animation: slideUp 0.8s ease-in-out forwards 0.8s;
+        white-space: nowrap;
+        // transform: translateY(300px);
+        // animation: slideUp 1.9s ease-in-out forwards 0.8s;
         span {
           color: #fff;
           display: block;
@@ -66,18 +68,18 @@
         line-height: 35px;
         font-family: 'Open Sans', sans-serif;
         color: #fff;
-        transform: translateY(300px);
-        animation: slideUp 0.8s ease-in-out forwards 0.8s;
+        // transform: translateY(300px);
+        // animation: slideUp 1.8s ease-in-out forwards 0.8s;
       }
 
-      @keyframes slideUp {
-        0% {
-          transform: translateY(300px);
-        }
-        100% {
-          transform: translateY(0px);
-        }
-      }
+      // @keyframes slideUp {
+      //   0% {
+      //     transform: translateY(300px);
+      //   }
+      //   100% {
+      //     transform: translateY(0px);
+      //   }
+      // }
     }
   }
 }
@@ -156,6 +158,8 @@
         padding: 0 25px 0 30px;
         height: 50px;
         margin: 0;
+        white-space: nowrap;
+        padding-right: 50px;
       }
       &:hover {
         background-color: #ffb400;
@@ -164,6 +168,7 @@
           opacity: 1;
           background-color: #ffb400;
           min-width: 70px;
+          transition: all 0.3s;
           // right: 27px;
           // margin: 0;
           // text-align: center;
