@@ -1,18 +1,49 @@
+$lightPrimary: #72b626;
+$lightSecondary: white;
+
+$darkPrimary: #ffb400;
+$darkSecondary: #111;
+
+:host(.light) {
+  .homeLayout {
+    background: $lightSecondary;
+  }
+  .rightContainer ul li {
+    .mat-icon.active {
+      background-color: $lightPrimary;
+    }
+    &:hover {
+      background-color: $lightPrimary;
+    }
+  }
+}
+
 .homeLayout {
   display: flex;
   flex: 1 1 0px;
   height: 100%;
+  background: $darkSecondary;
 }
 
 .leftContainer {
   display: flex;
   flex: 3 2 0px;
+  z-index: 5;
 }
 .rightContainer {
   display: flex;
   flex: 1 1 0px;
-  flex-direction: row-reverse;
+  flex-direction: column;
   margin-right: 30px;
+
+  .bulb {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+    .mat-icon {
+      color: $darkPrimary;
+    }
+  }
 
   ul {
     display: flex;
@@ -59,7 +90,7 @@
         font-size: 19px;
         transition: 0.3s;
         &.active {
-          background-color: #ffb400;
+          background-color: $darkPrimary;
         }
       }
 
@@ -73,7 +104,7 @@
         top: 0;
         right: 0;
         opacity: 0;
-        color: #fff;
+        color: $lightSecondary;
         line-height: 50px;
         font-weight: 500;
         transition: all 0.3s;
@@ -86,11 +117,11 @@
         padding-right: 50px;
       }
       &:hover {
-        background-color: #ffb400;
+        background-color: $darkPrimary;
         h2 {
           display: flex;
           opacity: 1;
-          background-color: #ffb400;
+          background-color: $darkPrimary;
           min-width: 70px;
           transition: all 0.3s;
           // right: 27px;

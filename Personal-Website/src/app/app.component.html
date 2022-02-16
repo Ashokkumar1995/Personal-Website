@@ -1,34 +1,18 @@
 <div class="homeLayout">
   <div class="leftContainer">
     <router-outlet></router-outlet>
-</div>
-<div class="rightContainer">
-<ul>
+  </div>
+  <div class="rightContainer">
+    <div class="bulb">
+      <mat-icon aria-hidden="false" [ngClass]="lightIcon">{{ lightIcon }}</mat-icon>
+    </div>
 
-  <li *ngFor="let list of iconsList">
-    <h2>{{list.name}}</h2>
-    <mat-icon aria-hidden="false" [ngClass]="{'active': list.isActive}">{{list.identifier}}</mat-icon>
-  </li>
-  <!-- <li>
-    <h2>Home</h2>
-    <mat-icon aria-hidden="false" aria-label="Example home icon" class="active">home</mat-icon>    
-  </li>
-
-  <li>
-    <h2>About</h2>
-    <mat-icon aria-hidden="false" aria-label="Example home icon">person_outline</mat-icon>
-  </li>
-  
-  <li>
-    <h2>Work History</h2>
-    <mat-icon aria-hidden="false" aria-label="Example home icon">work_outline</mat-icon>
-  </li>
-  
-  <li>
-    <h2>Contact</h2>
-    <mat-icon aria-hidden="false" aria-label="Example home icon">chat</mat-icon>
-  </li> -->
-
-</ul>
-</div> 
+    <ul>
+      <!-- <li><mat-icon aria-hidden="false">light</mat-icon></li> -->
+      <li *ngFor="let list of iconsList">
+        <h2>{{ list.name }}</h2>
+        <mat-icon aria-hidden="false" [ngClass]="{ active: list.isActive }">{{ list.identifier }}</mat-icon>
+      </li>
+    </ul>
+  </div>
 </div>
