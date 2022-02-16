@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationEnd, NavigationError, NavigationStart, Router
 import { Icons } from './models/icons.model';
 // import 'rxjs/add/operator/filter';
 import { filter, distinctUntilChanged } from 'rxjs/operators';
+import { AppComponentService } from './app.component.service';
 
 export enum Day {
   light,
@@ -21,11 +22,12 @@ export class AppComponent implements OnInit {
   day: Day = Day.dark;
   @HostBinding('class.light') light: boolean = true;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private service: AppComponentService) {
     this.time = new Date().getHours();
     if (this.time < 12) {
       this.day = Day.light;
       this.light = true;
+      this.service.changeTheme(this.day);
     }
     this.iconsList.push(new Icons('Home', 'home'));
     this.iconsList.push(new Icons('About', 'person_outline'));
