@@ -1,9 +1,6 @@
 @import '../styles/variables';
 :host {
   display: flex;
-}
-:host.light {
-  display: flex;
   flex-direction: row;
 
   @media (max-width: 1000px) {
@@ -12,6 +9,7 @@
     .imageContainer {
       left: 0px;
       height: calc(100vh - 30vh);
+      // min-width: 200px;
     }
     .about {
       margin-left: 10%;
@@ -20,6 +18,26 @@
       }
     }
   }
+}
+:host.light {
+  // display: flex;
+  // flex-direction: row;
+
+  // @media (max-width: 1000px) {
+  //   flex-direction: column;
+
+  //   .imageContainer {
+  //     left: 0px;
+  //     height: calc(100vh - 30vh);
+  //     // min-width: 200px;
+  //   }
+  //   .about {
+  //     margin-left: 10%;
+  //     h1 span {
+  //       color: $lightGrey;
+  //     }
+  //   }
+  // }
   background: $white;
 
   .about {
