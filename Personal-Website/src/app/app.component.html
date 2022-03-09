@@ -3,9 +3,18 @@
     <router-outlet></router-outlet>
   </div>
   <div class="rightContainer">
-    <div class="bulb">
-      <mat-icon aria-hidden="false" [ngClass]="lightIcon">{{ lightIcon }}</mat-icon>
+    <div class="bulb" (click)="switchMode()">
+      <mat-icon aria-hidden="false" [ngClass]="lightIcon" matTooltipPosition="above" matTooltip="Turn On Dark Mode">{{
+        lightIcon
+      }}</mat-icon>
     </div>
+    <!-- <button
+      mat-raised-button
+      matTooltip="Info about the action"
+      aria-label="Button that displays a tooltip in various positions"
+    >
+      Action
+    </button> -->
 
     <ul>
       <!-- <li><mat-icon aria-hidden="false">light</mat-icon></li> -->

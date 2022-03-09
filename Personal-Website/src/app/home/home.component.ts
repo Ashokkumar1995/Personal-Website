@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Day } from '../app.component';
 import { AppComponentService } from '../app.component.service';
@@ -12,11 +12,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
 
   constructor(private appService: AppComponentService) {}
-  currentTheme: Day = Day.dark;
+  currentTheme: Day = Day.light;
+  @HostBinding('class.light') light: boolean = true;
 
   ngOnInit(): void {
-    this.subscription = this.appService.currentTheme.subscribe((theme: Day) => (this.currentTheme = theme));
-    console.log(this.currentTheme);
+    this.subscription = this.appService.currentTheme.subscribe((theme: Day) => {
+      this.currentTheme = theme;
+      console.log(this.currentTheme);
+      this.currentTheme == Day.light ? (this.light = true) : (this.light = false);
+    });
   }
 
   ngOnDestroy() {

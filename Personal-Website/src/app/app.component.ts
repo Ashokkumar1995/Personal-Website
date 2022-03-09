@@ -1,9 +1,10 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { Icons } from './models/icons.model';
 // import 'rxjs/add/operator/filter';
-import { filter, distinctUntilChanged } from 'rxjs/operators';
+// import { filter, distinctUntilChanged } from 'rxjs/operators';
 import { AppComponentService } from './app.component.service';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 export enum Day {
   light,
@@ -15,20 +16,25 @@ export enum Day {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  private subscription!: Subscription;
+
   title = `Ashok's Website`;
   public iconsList: Icons[] = [];
-  lightIcon = 'light';
+  lightIcon = 'brightness_3';
   time = 10;
-  day: Day = Day.dark;
+  day: Day = Day.light;
   @HostBinding('class.light') light: boolean = true;
 
   constructor(private router: Router, private service: AppComponentService) {
     this.time = new Date().getHours();
-    if (this.time < 12) {
-      this.day = Day.light;
-      this.light = true;
-      this.service.changeTheme(this.day);
-    }
+    // this.time = 11;
+    // if (this.time < 12) {
+    //   this.day = Day.light;
+    //   this.light = true;
+    //   this.service.changeTheme(this.day);
+    //   this.lightIcon = 'brightness_3';
+    // }
+    this.service.changeTheme(this.day);
     this.iconsList.push(new Icons('Home', 'home'));
     this.iconsList.push(new Icons('About', 'person_outline'));
     this.iconsList.push(new Icons('Work History', 'work_outline'));
@@ -63,5 +69,19 @@ export class AppComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  switchMode(): void {
+    if (this.day == Day.light) {
+      this.service.changeTheme(Day.dark);
+      this.lightIcon = 'light';
+      this.light = false;
+    } else {
+      this.lightIcon = 'brightness_3';
+      this.service.changeTheme(Day.light);
+      this.light = true;
+    }
+  }
+  ngOnInit(): void {
+    this.subscription = this.service.currentTheme.subscribe((theme: Day) => (this.day = theme));
+    // this.currentTheme == Day.light ? (this.light = true) : (this.light = false);
+  }
 }

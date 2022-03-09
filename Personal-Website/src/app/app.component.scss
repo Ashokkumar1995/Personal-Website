@@ -1,19 +1,44 @@
-$lightPrimary: #72b626;
-$lightSecondary: white;
-
-$darkPrimary: #ffb400;
-$darkSecondary: #111;
+@mixin navIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e9e2e2;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 19px;
+  transition: 0.3s;
+  &.active {
+    background-color: $darkPrimary;
+  }
+}
+@import './styles/variables';
 
 :host(.light) {
   .homeLayout {
     background: $lightSecondary;
   }
-  .rightContainer ul li {
-    .mat-icon.active {
-      background-color: $lightPrimary;
+  .rightContainer {
+    background: $white;
+    .bulb {
+      cursor: pointer;
+      .mat-icon {
+        @include navIcon;
+        background: $lightIconsDarkBackground;
+      }
     }
-    &:hover {
-      background-color: $lightPrimary;
+    ul li {
+      background: $lightIconsBackground;
+
+      .mat-icon {
+        color: $lightGrey;
+      }
+      .mat-icon.active {
+        background-color: $lightPrimary;
+      }
+      &:hover {
+        background-color: $lightPrimary;
+      }
     }
   }
 }
@@ -27,7 +52,7 @@ $darkSecondary: #111;
 
 .leftContainer {
   display: flex;
-  flex: 3 2 0px;
+  flex: 6 2 0px;
   z-index: 5;
 }
 .rightContainer {
@@ -41,6 +66,10 @@ $darkSecondary: #111;
     justify-content: flex-end;
     margin-top: 50px;
     .mat-icon {
+      @include navIcon;
+      background: $lightIconsBackground;
+      // margin: 0 0 20px 0;
+      // font-size: 40px;
       color: $darkPrimary;
     }
   }
@@ -80,18 +109,7 @@ $darkSecondary: #111;
       background: #2b2a2a;
       cursor: pointer;
       .mat-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #e9e2e2;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        font-size: 19px;
-        transition: 0.3s;
-        &.active {
-          background-color: $darkPrimary;
-        }
+        @include navIcon;
       }
 
       h2 {
