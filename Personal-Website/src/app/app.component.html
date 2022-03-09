@@ -1,6 +1,11 @@
 <div class="homeLayout">
   <div class="leftContainer">
     <router-outlet></router-outlet>
+    <div class="bulbMobile" (click)="switchMode()">
+      <mat-icon aria-hidden="false" [ngClass]="lightIcon" matTooltipPosition="above" [matTooltip]="modeTooltip">{{
+        lightIcon
+      }}</mat-icon>
+    </div>
   </div>
   <div class="rightContainer">
     <div class="bulb" (click)="switchMode()">

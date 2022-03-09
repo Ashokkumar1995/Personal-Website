@@ -2,45 +2,56 @@
 :host {
   display: flex;
   flex-direction: row;
-
+  background-color: black;
   @media (max-width: 1000px) {
     flex-direction: column;
 
     .imageContainer {
-      left: 0px;
-      height: calc(100vh - 30vh);
+      // left: 0px;
+      // height: calc(100vh - 40vh);
+      // min-width: calc(100vw - 50vw);
       // min-width: 200px;
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      min-width: unset;
+      left: unset;
     }
     .about {
-      margin-left: 10%;
-      h1 span {
+      padding-left: unset;
+      background-color: black;
+      justify-content: center;
+      align-items: center;
+      margin: 25px;
+      h1 {
+        line-height: unset;
+      }
+      h1,
+      span {
+        font-size: 20px;
+      }
+      // h1
+      span {
         color: $lightGrey;
       }
+      p {
+        margin-top: 20px;
+      }
+      .aboutMeBtn {
+        margin-top: 20px;
+      }
+    }
+    .summaryDetails {
+      background-color: black;
+      justify-content: center;
     }
   }
 }
 :host.light {
-  // display: flex;
-  // flex-direction: row;
-
-  // @media (max-width: 1000px) {
-  //   flex-direction: column;
-
-  //   .imageContainer {
-  //     left: 0px;
-  //     height: calc(100vh - 30vh);
-  //     // min-width: 200px;
-  //   }
-  //   .about {
-  //     margin-left: 10%;
-  //     h1 span {
-  //       color: $lightGrey;
-  //     }
-  //   }
-  // }
   background: $white;
 
   .about {
+    background-color: white;
     h1 {
       color: $lightPrimary;
     }
@@ -65,7 +76,7 @@
     }
   }
   .summaryDetails {
-    background-color: $lightPrimary;
+    background-color: white;
   }
 }
 
@@ -108,6 +119,7 @@
 }
 
 .about {
+  background-color: $darkSecondary;
   display: flex;
   flex-direction: column;
   flex: 1 1 0px;
@@ -125,10 +137,10 @@
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
     white-space: nowrap;
-    span {
-      color: $white;
-      display: block;
-    }
+  }
+  span {
+    color: $white;
+    display: block;
   }
   p {
     margin: 15px 0 28px;

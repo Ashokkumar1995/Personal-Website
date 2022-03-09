@@ -15,19 +15,59 @@
   }
 }
 
+@media (max-width: 1000px) {
+  .homeLayout {
+    flex-direction: column;
+    .leftContainer {
+      .bulbMobile {
+        margin-top: 10px;
+        position: absolute;
+        display: flex;
+        right: 10px;
+        .mat-icon {
+          @include navIcon;
+          background: $lightIconsBackground;
+          color: $darkPrimary;
+        }
+      }
+    }
+    .rightContainer {
+      background-color: black;
+      margin-right: unset;
+      .bulb {
+        display: none;
+        margin-top: unset;
+      }
+      ul {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+  }
+}
+
 :host(.light) {
+  .leftContainer .bulbMobile {
+    cursor: pointer;
+    .mat-icon {
+      @include navIcon;
+      background: $lightPrimary;
+      color: $white;
+    }
+  }
   .homeLayout {
     background: $lightSecondary;
   }
   .rightContainer {
     background: $white;
     .bulb {
-      cursor: pointer;
       .mat-icon {
-        @include navIcon;
-        background: $lightIconsDarkBackground;
+        // @include navIcon;
+        background: $lightPrimary;
+        color: $white;
       }
     }
+
     ul li {
       background: $lightIconsBackground;
 
@@ -55,6 +95,9 @@
   display: flex;
   flex: 6 2 0px;
   z-index: 5;
+  .bulbMobile {
+    display: none;
+  }
 }
 .rightContainer {
   display: flex;
@@ -69,8 +112,6 @@
     .mat-icon {
       @include navIcon;
       background: $lightIconsBackground;
-      // margin: 0 0 20px 0;
-      // font-size: 40px;
       color: $darkPrimary;
     }
   }
@@ -84,20 +125,6 @@
     justify-content: center;
 
     li {
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
-      // // border-radius: 50%;
-      // transition: 0.3s;
-      // list-style: none;
-      // position: relative;
-      // // transition: 0.3s;
-      // margin: 20px 0;
-      // background: #2b2a2a;
-      // cursor: pointer;
-
-      // flex: 1 1 0px;
-
       width: 50px;
       height: 50px;
       list-style: none;
@@ -143,10 +170,6 @@
           background-color: $darkPrimary;
           min-width: 70px;
           transition: all 0.3s;
-          // right: 27px;
-          // margin: 0;
-          // text-align: center;
-          // border-radius: 30px 0 0 30px;
         }
       }
     }
