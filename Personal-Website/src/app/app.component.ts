@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   time = 10;
   day: Day = Day.light;
   @HostBinding('class.light') light: boolean = true;
-
+  modeTooltip = 'Turn On Dark Mode';
   constructor(private router: Router, private service: AppComponentService) {
     this.time = new Date().getHours();
     // this.time = 11;
@@ -74,10 +74,12 @@ export class AppComponent implements OnInit {
       this.service.changeTheme(Day.dark);
       this.lightIcon = 'light';
       this.light = false;
+      this.modeTooltip = 'Turn On Light Mode';
     } else {
       this.lightIcon = 'brightness_3';
       this.service.changeTheme(Day.light);
       this.light = true;
+      this.modeTooltip = 'Turn On Dark Mode';
     }
   }
   ngOnInit(): void {
