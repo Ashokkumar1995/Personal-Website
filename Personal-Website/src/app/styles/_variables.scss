@@ -8,3 +8,48 @@ $darkPrimary: #ffb400;
 $darkSecondary: #111;
 
 $white: #fff;
+
+@mixin btnHover {
+  width: 250px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  line-height: 1.4;
+  border-radius: 35px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.25s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  position: relative;
+  z-index: 1;
+  padding: 16px 0;
+  font-size: 15px;
+  font-weight: 600;
+
+  background-color: transparent;
+  outline: none !important;
+  border: 1px solid $darkPrimary;
+
+  &:hover {
+    background-color: $darkPrimary;
+  }
+  span {
+    position: relative;
+    z-index: 2;
+    color: $white;
+    transition: all 0.3s ease-out;
+  }
+  mat-icon {
+    border-radius: 50%;
+    background-color: $darkPrimary;
+    color: $white;
+  }
+}

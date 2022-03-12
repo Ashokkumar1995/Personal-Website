@@ -9,10 +9,19 @@ import { HomeComponent } from './home/home.component';
 import { AppComponentService } from './app.component.service';
 // import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { AboutComponent } from './about/about.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, MatIconModule, MatTooltipModule, BrowserAnimationsModule],
+  declarations: [AppComponent, HomeComponent, AboutComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatIconModule,
+    MatTooltipModule,
+    BrowserAnimationsModule,
+  ],
   providers: [AppComponentService],
   bootstrap: [AppComponent],
 })

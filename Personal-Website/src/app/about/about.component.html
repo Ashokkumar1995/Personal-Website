@@ -1,0 +1,30 @@
+<div class="title">
+  <h1>
+    ABOUT
+    <span>ME</span>
+  </h1>
+</div>
+
+<div class="mainContent">
+  <div class="personalInfo">
+    <div class="info">
+      <h3>PERSONAL INFOS</h3>
+      <ul class="infoList">
+        <li *ngFor="let in of info">
+          <span class="infoTitle"> {{ in.key }}:</span>
+          <span class="infoTitleValue"> {{ in.value }}</span>
+        </li>
+      </ul>
+      <button class="aboutMeBtn" (click)="downloadResume()">
+        <span>Download CV</span>
+        <mat-icon aria-hidden="false">arrow_forward</mat-icon>
+      </button>
+    </div>
+    <div class="box">
+      <div class="innerBox">
+        <h3>4</h3>
+        <p>years of experience</p>
+      </div>
+    </div>
+  </div>
+</div>

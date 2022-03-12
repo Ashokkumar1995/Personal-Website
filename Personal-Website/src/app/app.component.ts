@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   day: Day = Day.light;
   @HostBinding('class.light') light: boolean = true;
   modeTooltip = 'Turn On Dark Mode';
-  constructor(private router: Router, private service: AppComponentService) {
+  constructor(public router: Router, private service: AppComponentService) {
     this.time = new Date().getHours();
     if (this.time < 12) {
       this.lightSettings();
@@ -33,15 +33,15 @@ export class AppComponent implements OnInit {
       this.darkSettings();
     }
 
-    this.iconsList.push(new Icons('Home', 'home'));
-    this.iconsList.push(new Icons('About', 'person_outline'));
-    this.iconsList.push(new Icons('Work History', 'work_outline'));
-    this.iconsList.push(new Icons('Contact', 'chat'));
+    this.iconsList.push(new Icons('Home', 'home', 'home'));
+    this.iconsList.push(new Icons('About', 'person_outline', 'about'));
+    this.iconsList.push(new Icons('Work History', 'work_outline', 'history'));
+    this.iconsList.push(new Icons('Contact', 'chat', 'contact'));
 
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.iconsList.forEach((icons: Icons) => {
-          icons.identifier === event.url.substring(1) ? (icons.isActive = true) : (icons.isActive = false);
+          icons.url === event.url.substring(1) ? (icons.isActive = true) : (icons.isActive = false);
         });
       }
 

@@ -17,7 +17,9 @@
     <ul>
       <li *ngFor="let list of iconsList">
         <h2>{{ list.name }}</h2>
-        <mat-icon aria-hidden="false" [ngClass]="{ active: list.isActive }">{{ list.identifier }}</mat-icon>
+        <mat-icon aria-hidden="false" [ngClass]="{ active: list.isActive }" (click)="router.navigate([list.url])">{{
+          list.identifier
+        }}</mat-icon>
       </li>
     </ul>
     <!-- <p>Version: 2.0</p> -->

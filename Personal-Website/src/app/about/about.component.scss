@@ -1,0 +1,103 @@
+@import '../styles/variables';
+
+:host {
+  display: flex;
+  flex: 1 1 0px;
+  flex-direction: column;
+}
+
+:host.light {
+  background: $white;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+
+  h1 {
+    color: $white;
+    font-size: 56px;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    span {
+      color: $darkPrimary;
+    }
+  }
+}
+
+.mainContent {
+  display: flex;
+  flex: 1 1 0px;
+  margin-left: auto;
+  margin-right: auto;
+  .personalInfo {
+    display: flex;
+    .info {
+      h3 {
+        padding-bottom: 22px;
+        font-size: 26px;
+        color: $white;
+      }
+      .infoList {
+        padding: unset;
+        column-count: 2;
+        li {
+          list-style: none;
+          font-size: larger;
+          padding-bottom: 20px;
+          color: $white;
+          .infoTitle {
+            opacity: 0.8;
+            text-transform: capitalize;
+          }
+          .infoTitleValue {
+            font-weight: 600;
+          }
+        }
+      }
+      .aboutMeBtn {
+        @include btnHover;
+      }
+    }
+
+    .box {
+      margin-left: 50px;
+      .innerBox {
+        padding: 50px;
+        border-radius: 5px;
+        border: 1px solid #252525;
+      }
+      h3 {
+        display: inline-block;
+        margin: 15;
+        font-size: 50px;
+        font-weight: 700;
+        color: $darkPrimary;
+        &::after {
+          content: '+';
+          position: relative;
+          font-size: 33px;
+          font-weight: 300;
+          top: -20px;
+        }
+      }
+      p {
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        color: $white;
+        &::before {
+          content: '';
+          position: relative;
+          left: 0;
+          top: 13px;
+          width: 30px;
+          height: 1px;
+          background: #777;
+        }
+      }
+    }
+  }
+}
