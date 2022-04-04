@@ -2,15 +2,29 @@
 
 
 @media (max-width: 1000px) {
+  .title{
+    padding: 50px 0 !important;
+  }
 .mainContent {
+  padding: 10px;
   .personalInfo {
     flex-direction: column;
     .info{
           display: flex;
           flex-direction: column;
+          h3{
+            padding-bottom: 0px !important;
+          }
           .infoList{
                 display: flex;
                 flex-direction: column;
+                li{
+                      display: flex;
+                      flex-direction: column;
+                      span{
+                        margin: 5px 0;
+                      }
+                }
           }
     }
     .box{
@@ -46,13 +60,11 @@
           sans-serif;
           color: $lightGrey;
           font-size: 21px;
-          font-weight: 600;
-          padding-bottom: 0;          
+          font-weight: 600;                 
         }
         .infoList{
           li{
-            color: $lightGrey;
-            margin: 5px;
+            color: $lightGrey;           
           }
         }
         .aboutMeBtn{

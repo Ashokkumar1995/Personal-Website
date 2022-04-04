@@ -19,6 +19,7 @@
   .homeLayout {
     flex-direction: column;
     .leftContainer {
+      background: $black;
       .bulbMobile {
         margin-top: 10px;
         position: absolute;
