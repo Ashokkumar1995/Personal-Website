@@ -1,5 +1,27 @@
 @import '../styles/variables';
 
+
+@media (max-width: 1000px) {
+.mainContent {
+  .personalInfo {
+    flex-direction: column;
+    .info{
+          display: flex;
+          flex-direction: column;
+          .infoList{
+                display: flex;
+                flex-direction: column;
+          }
+    }
+    .box{
+      display: flex;
+      margin-left: unset !important;
+      margin: 20px;
+    }
+  }
+}
+
+}
 :host {
   display: flex;
   flex: 1 1 0px;
@@ -8,6 +30,55 @@
 
 :host.light {
   background: $white;
+  .title{
+    h1{
+      color: $lightGrey;
+    }
+    span{
+      color: $lightPrimary;
+    }
+  }
+  .mainContent{
+    .personalInfo{
+      .info{
+        h3{
+          font-family: Poppins,
+          sans-serif;
+          color: $lightGrey;
+          font-size: 21px;
+          font-weight: 600;
+          padding-bottom: 0;          
+        }
+        .infoList{
+          li{
+            color: $lightGrey;
+            margin: 5px;
+          }
+        }
+        .aboutMeBtn{
+              border: 1px solid #72b626;
+              span{
+                color: $lightGrey;
+              }
+              .mat-icon{
+                background-color: $lightPrimary;
+              }
+              
+        }
+      }
+      .box{
+        .innerBox{
+          border: 1px solid $lightBoxBackground;
+          h3{
+            color: $lightPrimary;
+          }
+          p{
+            color: $lightGrey;
+          }
+      }
+    }
+    }
+  }
 }
 
 .title {
@@ -44,6 +115,8 @@
       .infoList {
         padding: unset;
         column-count: 2;
+        font-family: Poppins,
+        sans-serif;
         li {
           list-style: none;
           font-size: larger;
