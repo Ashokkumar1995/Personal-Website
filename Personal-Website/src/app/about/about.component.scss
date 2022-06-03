@@ -1,94 +1,123 @@
 @import '../styles/variables';
 
+@mixin subTitle {
+  display: flex;
+  align-items: center;
+  //  justify-content: center;
+  padding-bottom: 22px;
+  font-size: 26px;
+  color: $white;
+}
 
 @media (max-width: 1000px) {
-  .title{
+  .title {
     padding: 50px 0 !important;
   }
-.mainContent {
-  padding: 10px;
-  .personalInfo {
-    flex-direction: column;
-    .info{
+
+
+  .mainContent {
+    padding: 10px;
+
+    .personalInfo {
+      flex-direction: column;
+
+      .info {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          padding-bottom: 0px !important;
+        }
+
+        .infoList {
           display: flex;
           flex-direction: column;
-          h3{
-            padding-bottom: 0px !important;
+
+          li {
+            display: flex;
+            flex-direction: column;
+
+            span {
+              margin: 5px 0;
+            }
           }
-          .infoList{
-                display: flex;
-                flex-direction: column;
-                li{
-                      display: flex;
-                      flex-direction: column;
-                      span{
-                        margin: 5px 0;
-                      }
-                }
-          }
-    }
-    .box{
-      display: flex;
-      margin-left: unset !important;
-      margin: 20px;
+        }
+      }
+
+      .box {
+        display: flex;
+        margin-left: unset !important;
+        margin: 20px;
+      }
     }
   }
-}
 
 }
+
 :host {
   display: flex;
   flex: 1 1 0px;
   flex-direction: column;
+  color: $black;
 }
 
 :host.light {
   background: $white;
-  .title{
-    h1{
+
+  .title {
+    h1 {
       color: $lightGrey;
     }
-    span{
+
+    span {
       color: $lightPrimary;
     }
   }
-  .mainContent{
-    .personalInfo{
-      .info{
-        h3{
+
+  .mainContent {
+    .personalInfo {
+      .info {
+        h3 {
           font-family: Poppins,
-          sans-serif;
+            sans-serif;
           color: $lightGrey;
           font-size: 21px;
-          font-weight: 600;                 
+          font-weight: 600;
         }
-        .infoList{
-          li{
-            color: $lightGrey;           
-          }
-        }
-        .aboutMeBtn{
-              border: 1px solid #72b626;
-              span{
-                color: $lightGrey;
-              }
-              .mat-icon{
-                background-color: $lightPrimary;
-              }
-              
-        }
-      }
-      .box{
-        .innerBox{
-          border: 1px solid $lightBoxBackground;
-          h3{
-            color: $lightPrimary;
-          }
-          p{
+
+        .infoList {
+          li {
             color: $lightGrey;
           }
+        }
+
+        .aboutMeBtn {
+          border: 1px solid #72b626;
+
+          span {
+            color: $lightGrey;
+          }
+
+          .mat-icon {
+            background-color: $lightPrimary;
+          }
+
+        }
       }
-    }
+
+      .box {
+        .innerBox {
+          border: 1px solid $lightBoxBackground;
+
+          h3 {
+            color: $lightPrimary;
+          }
+
+          p {
+            color: $lightGrey;
+          }
+        }
+      }
     }
   }
 }
@@ -116,33 +145,42 @@
   flex: 1 1 0px;
   margin-left: auto;
   margin-right: auto;
+  flex-direction: column;
+
   .personalInfo {
     display: flex;
+
     .info {
       h3 {
-        padding-bottom: 22px;
-        font-size: 26px;
-        color: $white;
+        // padding-bottom: 22px;
+        // font-size: 26px;
+        // color: $white;
+        @include subTitle;
       }
+
       .infoList {
         padding: unset;
         column-count: 2;
         font-family: Poppins,
-        sans-serif;
+          sans-serif;
+
         li {
           list-style: none;
           font-size: larger;
           padding-bottom: 20px;
           color: $white;
+
           .infoTitle {
             opacity: 0.8;
             text-transform: capitalize;
           }
+
           .infoTitleValue {
             font-weight: 600;
           }
         }
       }
+
       .aboutMeBtn {
         @include btnHover;
       }
@@ -150,17 +188,20 @@
 
     .box {
       margin-left: 50px;
+
       .innerBox {
         padding: 50px;
         border-radius: 5px;
         border: 1px solid #252525;
       }
+
       h3 {
         display: inline-block;
         margin: 15;
         font-size: 50px;
         font-weight: 700;
         color: $darkPrimary;
+
         &::after {
           content: '+';
           position: relative;
@@ -169,10 +210,12 @@
           top: -20px;
         }
       }
+
       p {
         font-family: 'Open Sans', sans-serif;
         text-transform: uppercase;
         color: $white;
+
         &::before {
           content: '';
           position: relative;
@@ -181,6 +224,44 @@
           width: 30px;
           height: 1px;
           background: #777;
+        }
+      }
+    }
+  }
+
+  .divider {
+    margin: 40px 10px;
+  }
+
+  .skillInfo {
+    h3 {
+      @include subTitle;
+    }
+
+    .subSkills {
+      span {
+        color: $white;
+        font-size: 20px;
+      }
+
+      .tech {
+        h2{
+          margin-bottom: unset;
+        }
+        ul {
+          color: $white;
+          list-style: square;
+          column-count: 2;
+          li{
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            img{
+              width: 20px;
+              height: 20px;
+              margin: 0 12px;
+            }
+          }
         }
       }
     }

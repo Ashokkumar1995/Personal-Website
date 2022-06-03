@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   modeTooltip = 'Turn On Dark Mode';
   constructor(public router: Router, private service: AppComponentService) {
     this.time = new Date().getHours();
-    if (this.time < 12) {
+    if (this.time > 12) {
       this.lightSettings();
     } else {
       this.darkSettings();

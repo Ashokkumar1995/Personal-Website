@@ -4,6 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Day } from '../app.component';
 import { AppComponentService } from '../app.component.service';
 import { PersonalDetails } from '../models/personal-details.model';
+import { Skills } from '../models/skills.model';
 
 @Component({
   selector: 'app-about',
@@ -16,6 +17,7 @@ export class AboutComponent implements OnInit {
   constructor(private appService: AppComponentService) {}
   currentTheme: Day = Day.light;
   info: PersonalDetails[] = [];
+  techList: Skills[] = [];
   private fileUrl = '../../assets/resume/Ashokkumar_Resume.pdf  ';
   @HostBinding('class.light') light: boolean = true;
 
@@ -26,6 +28,22 @@ export class AboutComponent implements OnInit {
     });
 
     this.setPersonalDetails();
+    this.setTechSkills();
+  }
+
+  private setTechSkills(): void {
+    this.techList.push(new Skills('Angular', 'angular'));
+    this.techList.push(new Skills('Typescript', 'typescript'));
+    this.techList.push(new Skills('Javascript', 'javascript'));
+    this.techList.push(new Skills('HTML', 'html'));
+    this.techList.push(new Skills('SASS', 'sass'));
+    this.techList.push(new Skills('CSS', 'css'));
+    this.techList.push(new Skills('FlexBox', 'flex'));
+    this.techList.push(new Skills('Bootstrap', 'bootstrap'));
+
+    this.techList.push(new Skills('Java', 'java'));
+    this.techList.push(new Skills('Spring', 'spring'));
+    this.techList.push(new Skills('My Sql', 'mysql'));
   }
 
   private setPersonalDetails(): void {

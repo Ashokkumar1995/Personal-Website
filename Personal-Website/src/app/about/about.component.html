@@ -27,4 +27,23 @@
       </div>
     </div>
   </div>
+
+  <div class="divider">
+    <hr />
+  </div>
+  <div class="skillInfo">
+    <h3>MY SKILLS</h3>
+    <div class="subSkills">
+      <div class="tech">
+        <span>TECHNOLOGIES</span>
+        <ul>
+          <li *ngFor="let list of techList">
+            <h2>{{ list.name }}</h2>
+            <!-- <mat-icon aria-hidden="false">{{ list.image }}</mat-icon> -->
+            <img src="../../assets/icons/{{ list.image }}.png" />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
