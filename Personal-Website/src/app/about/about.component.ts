@@ -18,6 +18,7 @@ export class AboutComponent implements OnInit {
   currentTheme: Day = Day.light;
   info: PersonalDetails[] = [];
   techList: Skills[] = [];
+  toolsList: Skills[] = [];
   private fileUrl = '../../assets/resume/Ashokkumar_Resume.pdf  ';
   @HostBinding('class.light') light: boolean = true;
 
@@ -29,6 +30,14 @@ export class AboutComponent implements OnInit {
 
     this.setPersonalDetails();
     this.setTechSkills();
+    this.setToolsSkills();
+  }
+
+  private setToolsSkills(): void {
+    this.toolsList.push(new Skills('GIT', 'git'));
+    this.toolsList.push(new Skills('JIRA', 'jira'));
+    this.toolsList.push(new Skills('Jenkins', 'jenkins'));
+    this.toolsList.push(new Skills('Confluence', 'confluence'));
   }
 
   private setTechSkills(): void {

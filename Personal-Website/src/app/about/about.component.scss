@@ -92,7 +92,7 @@
         }
 
         .aboutMeBtn {
-          border: 1px solid #72b626;
+          border: 1px solid $lightPrimary;
 
           span {
             color: $lightGrey;
@@ -119,6 +119,21 @@
         }
       }
     }
+         .skillInfo {
+           h3 {
+            color: $lightPrimary;
+           }
+           .subSkills{
+             .tech,.tools{
+               span{
+                 color: $lightGrey;
+               }
+                ul {
+                color: $lightGrey;
+                }
+             }             
+           }
+          }
   }
 }
 
@@ -192,7 +207,7 @@
       .innerBox {
         padding: 50px;
         border-radius: 5px;
-        border: 1px solid #252525;
+        border: 1px solid $lightIconsDarkBackground;
       }
 
       h3 {
@@ -223,7 +238,7 @@
           top: 13px;
           width: 30px;
           height: 1px;
-          background: #777;
+          background: $lightGrey;
         }
       }
     }
@@ -242,9 +257,10 @@
       span {
         color: $white;
         font-size: 20px;
+        font-weight: 700;
       }
 
-      .tech {
+      .tech ,.tools{
         h2{
           margin-bottom: unset;
         }
@@ -263,6 +279,9 @@
             }
           }
         }
+      }
+      .tools {
+        margin-top: 50px;
       }
     }
   }

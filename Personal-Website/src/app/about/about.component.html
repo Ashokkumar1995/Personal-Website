@@ -39,7 +39,16 @@
         <ul>
           <li *ngFor="let list of techList">
             <h2>{{ list.name }}</h2>
-            <!-- <mat-icon aria-hidden="false">{{ list.image }}</mat-icon> -->
+            <img src="../../assets/icons/{{ list.image }}.png" />
+          </li>
+        </ul>
+      </div>
+
+      <div class="tools">
+        <span>TOOLS</span>
+        <ul>
+          <li *ngFor="let list of toolsList">
+            <h2>{{ list.name }}</h2>
             <img src="../../assets/icons/{{ list.image }}.png" />
           </li>
         </ul>
