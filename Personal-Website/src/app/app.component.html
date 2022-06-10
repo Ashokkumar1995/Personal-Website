@@ -4,22 +4,22 @@
     <div class="bulbMobile" (click)="switchMode()">
       <mat-icon aria-hidden="false" [ngClass]="lightIcon" matTooltipPosition="above" [matTooltip]="modeTooltip">{{
         lightIcon
-      }}</mat-icon>
+        }}</mat-icon>
     </div>
   </div>
   <div class="rightContainer">
     <div class="bulb" (click)="switchMode()">
       <mat-icon aria-hidden="false" [ngClass]="lightIcon" matTooltipPosition="above" [matTooltip]="modeTooltip">{{
         lightIcon
-      }}</mat-icon>
+        }}</mat-icon>
     </div>
 
     <ul>
-      <li *ngFor="let list of iconsList">
+      <li *ngFor="let list of iconsList" (click)="router.navigate([list.url])">
         <h2>{{ list.name }}</h2>
-        <mat-icon aria-hidden="false" [ngClass]="{ active: list.isActive }" (click)="router.navigate([list.url])">{{
+        <mat-icon aria-hidden="false" [ngClass]="{ active: list.isActive }">{{
           list.identifier
-        }}</mat-icon>
+          }}</mat-icon>
       </li>
     </ul>
     <!-- <p>Version: 2.0</p> -->
