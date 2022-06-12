@@ -42,7 +42,14 @@ export class WorkHistoryComponent implements OnInit {
 
     let bnyAwards: string[] = ['Applause Award (2019)', 'WoW Award (2019)'];
 
-    let bny = new WorkDetails('Bank Of NewYork Mellon', 'Application Developer', '2017-2019', bnyDetails, bnyAwards);
+    let bny = new WorkDetails(
+      'Bank Of NewYork Mellon',
+      'Application Developer',
+      '2017-2019',
+      bnyDetails,
+      bnyAwards,
+      'bny'
+    );
 
     let nielsenDetails: string[] = [];
 
@@ -57,7 +64,14 @@ export class WorkHistoryComponent implements OnInit {
 
     let nielsenAwards: string[] = ['Gold Award (2020)'];
 
-    let nielsen = new WorkDetails('Nielsen', 'Software Engineer', '2019-2021', nielsenDetails, nielsenAwards);
+    let nielsen = new WorkDetails(
+      'Nielsen',
+      'Software Engineer',
+      '2019-2021',
+      nielsenDetails,
+      nielsenAwards,
+      'nielsen'
+    );
     this.workDetails.push(bny, nielsen);
   }
 }

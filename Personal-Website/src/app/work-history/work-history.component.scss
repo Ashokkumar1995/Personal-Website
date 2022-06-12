@@ -18,6 +18,27 @@
       color: $lightPrimary;
     }
   }
+  .mainContent {
+    .workDetails {
+      color: $lightGrey;
+      .workIcon {
+        color: $lightGrey;
+      }
+      .hr-line {
+        border-bottom: 1px solid $lightPrimary;
+      }
+      .companyDetails {
+        background-color: $lightPrimary;
+        .mat-card-title {
+          color: $white;
+        }
+        .description,
+        .descriptiontitle {
+          color: white;
+        }
+      }
+    }
+  }
 }
 
 .title {
@@ -46,8 +67,10 @@
   .workDetails {
     display: flex;
     align-items: center;
-    color: $lightGrey;
-
+    color: $white;
+    .workIcon {
+      color: $darkPrimary;
+    }
     .hr-line {
       align-items: center;
       justify-content: center;
@@ -55,7 +78,7 @@
       width: 50%;
       position: relative;
       margin: 5px;
-      border-bottom: 1px solid $lightPrimary;
+      border-bottom: 1px solid $darkPrimary;
       .workYear {
         font-size: 16px;
         font-weight: bold;
@@ -64,11 +87,14 @@
     .companyDetails {
       max-width: 700px;
       min-width: 600px;
-      background-color: $lightPrimary;
+      background-color: $white;
       margin-bottom: 20px;
       img {
-        background-color: #e5e1ce;
+        background-color: $white;
         width: 140px;
+      }
+      .mat-card-title {
+        color: $darkPrimary;
       }
       .mat-card-subtitle {
         font-size: large;
@@ -80,10 +106,12 @@
       }
       .description {
         font-size: medium;
+        color: $black;
       }
       .descriptiontitle {
         font-size: 16px;
         font-weight: bold;
+        color: $darkPrimary;
       }
     }
   }
