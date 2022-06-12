@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
 
     this.iconsList.push(new Icons('Home', 'home', 'home'));
     this.iconsList.push(new Icons('About', 'person_outline', 'about'));
-    this.iconsList.push(new Icons('Work History', 'work_outline', 'history'));
+    this.iconsList.push(new Icons('Work History', 'work_outline', 'work'));
     this.iconsList.push(new Icons('Contact', 'chat', 'contact'));
 
     this.router.events.subscribe((event) => {

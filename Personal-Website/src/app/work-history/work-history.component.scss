@@ -1,0 +1,90 @@
+@import '../styles/variables';
+
+:host {
+  display: flex;
+  flex: 1 1 0px;
+  flex-direction: column;
+  color: #111;
+}
+:host.light {
+  background: $white;
+
+  .title {
+    h1 {
+      color: $lightGrey;
+    }
+
+    span {
+      color: $lightPrimary;
+    }
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+
+  h1 {
+    color: $white;
+    font-size: 56px;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    span {
+      color: $darkPrimary;
+    }
+  }
+}
+
+.mainContent {
+  display: flex;
+  flex: 1 1 0px;
+  flex-direction: column;
+  align-items: center;
+  .workDetails {
+    display: flex;
+    align-items: center;
+    color: $lightGrey;
+
+    .hr-line {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      width: 50%;
+      position: relative;
+      margin: 5px;
+      border-bottom: 1px solid $lightPrimary;
+      .workYear {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    .companyDetails {
+      max-width: 700px;
+      min-width: 600px;
+      background-color: $lightPrimary;
+      margin-bottom: 20px;
+      img {
+        background-color: #e5e1ce;
+        width: 140px;
+      }
+      .mat-card-subtitle {
+        font-size: large;
+        color: $lightGrey;
+        margin-top: 2px;
+      }
+      .mat-card-content {
+        margin-top: 10px;
+      }
+      .description {
+        font-size: medium;
+      }
+      .descriptiontitle {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+}

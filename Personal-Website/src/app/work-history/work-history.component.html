@@ -1,0 +1,40 @@
+<div class="title">
+    <h1>
+        WORK
+        <span>HISTORY</span>
+    </h1>
+</div>
+
+<div class="mainContent">
+    <!-- <div class="companyDetails">
+        <img class="profilePicture" src="../assets/bny.png" />
+    </div> -->
+    <div *ngFor="let work of workDetails" class="workDetails">
+
+        <mat-icon class="workIcon" aria-hidden="false">work</mat-icon>
+        <div class="hr-line">
+            <span class="workYear">{{work.year}}</span>
+        </div>
+        <mat-card class="companyDetails">
+            <mat-card-title-group>
+                <mat-card-title>{{work.name}}</mat-card-title>
+                <mat-card-subtitle>{{work.position}}</mat-card-subtitle>
+                <img mat-card-sm-image src="../assets/bny.png">
+            </mat-card-title-group>
+            <mat-card-content>
+                <div>
+                    <span class="descriptiontitle">Description</span>
+                    <ul class="description" *ngFor="let detail of work.details">
+                        <li>{{detail}}</li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="descriptiontitle">Awards</span>
+                    <ul class="description" *ngFor="let award of work.awards">
+                        <li>{{award}}</li>
+                    </ul>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
