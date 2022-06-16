@@ -1,0 +1,91 @@
+@import '../styles/variables';
+
+:host {
+  display: flex;
+  flex: 1 1 0px;
+  flex-direction: column;
+  color: $black;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+
+  h1 {
+    color: $white;
+    font-size: 56px;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    span {
+      color: $darkPrimary;
+    }
+  }
+}
+
+.mainContent {
+  display: flex;
+  flex: 1 1 0px;
+  flex-direction: row;
+  margin: 40px;
+  .contactLinks {
+    display: flex;
+    flex: 2 1 0px;
+    flex-direction: column;
+    color: $white;
+    h3 {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 26px;
+    }
+    div {
+      display: flex;
+      margin: 15px 0;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 17px;
+
+      .mat-icon {
+        color: $darkPrimary;
+        // font-size: 33px;
+      }
+
+      span,
+      .mailLink {
+        margin-left: 15px;
+        font-weight: 600;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+    .socialMediaLinks img {
+      color: $white;
+      width: 40px;
+      height: 40px;
+      margin: 0 15px 0 0;
+    }
+
+    .content {
+      margin-bottom: 40px;
+    }
+  }
+  .contactForm {
+    display: flex;
+    flex: 3 2 0px;
+  }
+}
+
+:host.light {
+  background: $white;
+
+  .title {
+    h1 {
+      color: $lightGrey;
+    }
+
+    span {
+      color: $lightPrimary;
+    }
+  }
+}
