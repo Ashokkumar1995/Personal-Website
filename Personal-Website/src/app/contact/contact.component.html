@@ -39,5 +39,28 @@
         </div>
 
     </div>
-    <div class="contactForm"></div>
+    <div class="contactForm">
+        <div class="emailSuccess" *ngIf="emailSuccess">
+            <div class="tickIcon">
+                <mat-icon *ngIf="!emailErrorOccured" aria-hidden="false">task_alt</mat-icon>
+                <mat-icon *ngIf="emailErrorOccured" aria-hidden="false">sentiment_neutral</mat-icon>
+            </div>
+            <span>{{emailMessage}}</span>
+        </div>
+        <form *ngIf="!emailSuccess" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="nameForm">
+                <input id="name" type="text" formControlName="name" placeholder="YOUR NAME" required>
+
+                <input class="email" id="email" type="text" formControlName="email" placeholder="YOUR EMAIL">
+            </div>
+
+            <input class="subject" id="subject" type="text" formControlName="subject" placeholder="YOUR SUBJECT">
+
+            <textarea class="message" id="message" type="text" formControlName="message" placeholder="YOUR MESSAGE">
+            </textarea>
+
+            <button class="submit" type="submit" [disabled]="!contactForm.valid">Submit</button>
+        </form>
+
+    </div>
 </div>

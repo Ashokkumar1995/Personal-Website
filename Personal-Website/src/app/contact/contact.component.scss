@@ -1,5 +1,59 @@
 @import '../styles/variables';
 
+@media (max-width: 1000px) {
+  .mainContent {
+    flex-direction: column !important;
+  }
+}
+
+:host.light {
+  background: $white;
+
+  .title {
+    h1 {
+      color: $lightGrey;
+    }
+
+    span {
+      color: $lightPrimary;
+    }
+  }
+
+  .mainContent {
+    .contactForm {
+      form {
+        .submit {
+          background-color: $lightPrimary;
+          border: 1px solid $lightPrimary;
+        }
+      }
+      .emailSuccess {
+        border: 1px solid $lightPrimary;
+        .tickIcon .mat-icon {
+          color: $lightPrimary;
+        }
+        span {
+          color: $lightGrey;
+        }
+      }
+    }
+    .contactLinks {
+      h3 {
+        color: $lightPrimary;
+      }
+      .content {
+        color: $lightGrey;
+      }
+      div span,
+      div a {
+        color: $lightGrey;
+      }
+      .mat-icon {
+        color: $lightPrimary;
+      }
+    }
+  }
+}
 :host {
   display: flex;
   flex: 1 1 0px;
@@ -39,6 +93,7 @@
       text-transform: uppercase;
       font-weight: 600;
       font-size: 26px;
+      color: $darkPrimary;
     }
     div {
       display: flex;
@@ -73,6 +128,68 @@
   .contactForm {
     display: flex;
     flex: 3 2 0px;
+
+    .emailSuccess {
+      display: flex;
+      flex-direction: column;
+      max-height: 250px;
+      border: 1px solid $darkPrimary;
+      padding: 40px;
+      .tickIcon {
+        display: flex;
+        justify-content: center;
+        .mat-icon {
+          font-size: xxx-large;
+          color: $darkPrimary;
+        }
+      }
+      span {
+        font-size: 25px;
+        font-family: 'Open Sans', sans-serif;
+        margin-top: 40px;
+        color: $white;
+        line-height: initial;
+      }
+    }
+    form {
+      display: flex;
+      flex: 1 1 0px;
+      flex-direction: column;
+      input,
+      textarea {
+        border: 1px solid $black;
+        background: #252525;
+        color: $white;
+        padding: 11px 26px;
+        border-radius: 30px;
+        outline: none !important;
+        transition: 0.3s;
+      }
+      textarea {
+        padding: 12px 26px;
+        height: 200px;
+        overflow: hidden;
+      }
+      .nameForm {
+        display: flex;
+        input {
+          width: 50%;
+        }
+        .email {
+          margin-left: 10px;
+        }
+      }
+      .subject,
+      .message,
+      .submit {
+        margin-top: 30px;
+      }
+      .submit {
+        @include btnHover;
+        color: $white;
+        background-color: $darkPrimary;
+      }
+    }
   }
 }
 
